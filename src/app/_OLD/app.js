@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('youuuApp', [
+angular.module('yoAngularIonicApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
