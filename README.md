@@ -1,6 +1,8 @@
-ionic-angular-cordova-seed
+yo-angular-ionic
 ==========================
 
-The perfect starting point for an Ionic project.
-
-- [Ionic Tutorials](http://ionicframework.com/tutorials/)
+The perfect starting
+-cordova
+-yeoman
+-angularjs
+-ionicjs

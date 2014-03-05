@@ -1,17 +1,17 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Controller: PetdetailCtrl', function () {
 
   // load the controller's module
   beforeEach(module('yoAngularIonicApp'));
 
-  var MainCtrl,
+  var PetdetailCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
+    PetdetailCtrl = $controller('PetdetailCtrl', {
       $scope: scope
     });
   }));

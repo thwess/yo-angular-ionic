@@ -22,7 +22,7 @@ module.exports = function (grunt) {
     yeoman: {
       // configurable paths
       app: require('./bower.json').appPath || 'app',
-      dist: 'dist'
+      dist: '../www'
     },
 
     // Watches files for changes and runs tasks based on the changed files
@@ -88,15 +88,6 @@ module.exports = function (grunt) {
         options: {
           base: '<%= yeoman.dist %>'
         }
-      },
-      ionic: {
-        options: {
-          open: true,
-          base: [
-            '.tmp',
-            '<%= yeoman.app %>'
-          ]
-        }
       }
     },
 
@@ -124,7 +115,6 @@ module.exports = function (grunt) {
         files: [{
           dot: true,
           src: [
-            '.tmp',
             '<%= yeoman.dist %>/*',
             '!<%= yeoman.dist %>/.git*'
           ]
@@ -141,9 +131,9 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '.tmp/styles/',
+          cwd: '<%= yeoman.dist %>/styles/',
           src: '{,*/}*.css',
-          dest: '.tmp/styles/'
+          dest: '<%= yeoman.dist %>/styles/'
         }]
       }
     },
@@ -184,23 +174,6 @@ module.exports = function (grunt) {
       server: {
         options: {
           debugInfo: true
-        }
-      },
-      ionic: {
-        options: {
-          sassDir: '<%= yeoman.app %>/scss',
-          cssDir: '<%= yeoman.app %>/css',
-          generatedImagesDir: '<%= yeoman.app %>/img/generated',
-          imagesDir: '<%= yeoman.app %>/img',
-          javascriptsDir: '<%= yeoman.app %>/js',
-          fontsDir: '<%= yeoman.app %>/fonts',
-          importPath: '<%= yeoman.app %>/lib',
-          httpImagesPath: '/img',
-          httpGeneratedImagesPath: '/img/generated',
-          httpFontsPath: '/css/fonts',
-          relativeAssets: false,
-          assetCacheBuster: false,
-          raw: 'Sass::Script::Number.precision = 10\n'
         }
       }
     },
@@ -306,8 +279,8 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>',
           src: [
             '*.{ico,png,txt}',
-            '.htaccess',
             '*.html',
+            'config.xml',
             'views/{,*/}*.html',
             'bower_components/**/*',
             'images/{,*/}*.{webp}',
@@ -393,14 +366,6 @@ module.exports = function (grunt) {
       'watch'
     ]);
   });
-
-  /*
-  * Provisorio
-  */
-  grunt.registerTask('prov', [
-    'compass:ionic',
-    'connect:ionic:keepalive'
-  ]);
 
   grunt.registerTask('server', function () {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
